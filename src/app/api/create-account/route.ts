@@ -24,12 +24,6 @@ const unwrapRpcPayload = (response: any) => {
   return response.data.result;
 };
 
-const BASE_RNG_LENGTH = 4;
-
-const getRngLength = (attempt: number) => {
-  return BASE_RNG_LENGTH + attempt - 1;
-};
-
 const createAccount = async (data: any) => {
   return getUsername(data.firstName, data.lastName).then((username) => {
     const password = generateHexId(12);
@@ -68,6 +62,12 @@ const createAccount = async (data: any) => {
         return responseData;
       });
   });
+};
+
+const BASE_RNG_LENGTH = 4;
+
+const getRngLength = (attempt: number) => {
+  return BASE_RNG_LENGTH + attempt - 1;
 };
 
 const getUsername = async (
