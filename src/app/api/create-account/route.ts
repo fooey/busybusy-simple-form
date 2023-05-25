@@ -65,7 +65,6 @@ const createAccount = async (data: any) => {
 };
 
 const BASE_RNG_LENGTH = 4;
-
 const getRngLength = (attempt: number) => {
   return BASE_RNG_LENGTH + attempt - 1;
 };
